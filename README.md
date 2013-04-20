@@ -5,12 +5,11 @@ A jQuery plugin to simulate the zooming animation for opening a file in Mac OS X
 
 ## Demo
 
-![launchZoomer Demo](https://raw.github.com/dannvix/jquery-launchZoomer/add-demo-gif-to-readme/demo.gif)
-
+![launchZoomer Demo](https://raw.github.com/zhusee2/jquery-launchZoomer/add-demo-gif-to-readme/demo.gif)
 
 ## Usage
 
-Just select the element you want to apply this effect, and call `launchZoomer()` method. An optional hash of settings can be passed in.
+Just select the element you want to apply this effect, and call `launchZoomer()` method. An optional hash of settings can be passed in. (Please see the Options section below.)
 
     $('.target-element').launchZoomer();
     $('.target-element').launchZoomer(options);
@@ -24,12 +23,18 @@ If you want to disable the zooming effect, pass a destroy option:
 Here are all the default and available options:
 
     options = {
+      trigger: 'click',
       scale: 3,
       blur: '5px',
       duration: '350ms',
       easingFunction: 'ease-out',
       delay: 0
     }
+
+## Update History
+
+  * v1.1: You can now specify trigger event to bind in options, and the default trigger event is changed to click rather than dblclick to reflect common web behavior.
+  * v1.0: First release
 
 ## License
 
