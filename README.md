@@ -3,6 +3,11 @@ launchZoomer
 
 A jQuery plugin to simulate the zooming animation for opening a file in Mac OS X Finder
 
+## Demo
+
+![launchZoomer Demo](https://raw.github.com/dannvix/jquery-launchZoomer/add-demo-gif-to-readme/demo.gif)
+
+
 ## Usage
 
 Just select the element you want to apply this effect, and call `launchZoomer()` method. An optional hash of settings can be passed in.
