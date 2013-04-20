@@ -20,11 +20,19 @@
     return zoomer.on('dblclick.launchZoomer', function(event) {
       var newZoomer = zoomer.clone(),
           transitionValue = [
-            'all', settings.duration, settings.easingFunction, settings.delay
-          ].join(' ');
+              'all', settings.duration, settings.easingFunction, settings.delay
+            ].join(' '),
+          offset = zoomer.offset(),
+          copyWidth = zoomer.width(),
+          copyHeight = zoomer.height();
 
       newZoomer.addClass('launch-zoomer-copy')
-               .css('transition', transitionValue)
+               .css({
+                 width: copyWidth, height: copyHeight,
+                 transition: transitionValue,
+                 position: 'absolute',
+                 top: offset.y, left: offset.x
+               })
                .insertAfter(zoomer);
 
       newZoomer.on(transitionEndEvents, function(event) {
