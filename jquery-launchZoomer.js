@@ -11,7 +11,7 @@
           delay: 0
         });
 
-    zoomer.dblclick(function(event) {
+    zoomer.on('dblclick.launchZoomer', function(event) {
       var newZoomer = zoomer.clone();
       newZoomer.addClass('launch-zoomer-copy')
                .css('transition', 'all 350ms ease-out')
