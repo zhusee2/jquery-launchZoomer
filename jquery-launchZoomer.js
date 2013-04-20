@@ -15,12 +15,16 @@
           duration: '350ms',
           easingFunction: 'ease-out',
           delay: 0
-        });
+        }, options);
 
     return zoomer.on('dblclick.launchZoomer', function(event) {
-      var newZoomer = zoomer.clone();
+      var newZoomer = zoomer.clone(),
+          transitionValue = [
+            'all', settings.duration, settings.easingFunction, settings.delay
+          ].join(' ');
+
       newZoomer.addClass('launch-zoomer-copy')
-               .css('transition', 'all 350ms ease-out')
+               .css('transition', transitionValue)
                .insertAfter(zoomer);
 
       newZoomer.on(transitionEndEvents, function(event) {
@@ -31,7 +35,7 @@
         newZoomer.css({
           transform: 'scale(3)',
           opacity: 0,
-          '-webkit-filter': 'blur(5px)'
+          '-webkit-filter': 'blur(' + settings.blur + ')'
         });
       }, 100);
     });
