@@ -2,8 +2,14 @@
   var transitionEndEvents = 'transitionend webkitTransitionEnd otransitionend oTransitionEnd';
 
   $.fn.launchZoomer = function(options) {
-    var zoomer = this,
-        settings = $.extend({
+    var zoomer = this, settings;
+
+    if (options === "destroy") {
+      zoomer.off('.launchZoomer');
+      return zoomer;
+    }
+
+    settings = $.extend({
           scale: 3,
           blur: '5px',
           duration: '350ms',
