@@ -10,6 +10,7 @@
     }
 
     settings = $.extend({
+          trigger: 'click',
           scale: 3,
           blur: '5px',
           duration: '350ms',
@@ -17,7 +18,7 @@
           delay: 0
         }, options);
 
-    return zoomer.on('dblclick.launchZoomer', function(event) {
+    return zoomer.on(settings.trigger + '.launchZoomer', function(event) {
       var newZoomer = zoomer.clone(),
           transitionValue = [
               'all', settings.duration, settings.easingFunction, settings.delay
