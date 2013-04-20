@@ -2,17 +2,19 @@ $(function() {
   $('[data-launch="zoomer"]').dblclick(function(event) {
     var zoomer = $(event.currentTarget),
         newZoomer = $(zoomer).clone();
-    $(newZoomer).addClass('launch-zoomer-copy').insertAfter(zoomer);
+    $(newZoomer).addClass('launch-zoomer-copy')
+                .css('transition', 'all 350ms ease-out')
+                .insertAfter(zoomer);
 
     setTimeout(function() {
       $(newZoomer).css({
         transform: 'scale(3)',
-        filter: 'blur(5px)',
-        opacity: 0
+        opacity: 0,
+        '-webkit-filter': 'blur(5px)'
       });
     }, 100);
     setTimeout(function() {
-      $(newZoomer).remove();
+
     }, 700);
   });
 });
