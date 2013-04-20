@@ -5,7 +5,7 @@ A jQuery plugin to simulate the zooming animation for opening a file in Mac OS X
 
 ## Demo
 
-![launchZoomer Demo](https://raw.github.com/dannvix/jquery-launchZoomer/master/demo.gif)
+![launchZoomer Demo](https://raw.github.com/dannvix/jquery-launchZoomer/add-demo-gif-to-readme/demo.gif)
 
 
 ## Usage
